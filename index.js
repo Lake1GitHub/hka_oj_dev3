@@ -8,7 +8,7 @@ const webpack = require("webpack");
 const path = require("path");
 const indexJs = require("src/index.js");
 console.log("----------config-----------");
-console.log(config);
+console.log(config);    
 module.exports = {
   config
 };
