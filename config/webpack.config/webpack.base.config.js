@@ -1,6 +1,9 @@
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const fs = require("fs");
+const webpack = require("webpack");
+const WriteFilePlugin = require("write-file-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 let entry = {};
 let output = {};
 let { keys, values, entries } = Object;
@@ -17,8 +20,6 @@ files.forEach(file => {
   });
 });
 
-console.log("1111111111111111111111111");
-
 files = fs.readdirSync("src/components");
 files.forEach(file => {
   let components = fs.readdirSync(`src/components/${file}`);
@@ -31,8 +32,6 @@ files.forEach(file => {
   });
 });
 
-console.log("1111111111111111111111111");
-
 files = fs.readdirSync("src");
 files.forEach(file => {
   let newFile = path.resolve("src", file);
@@ -42,11 +41,6 @@ files.forEach(file => {
     }
   }
 });
-
-for ([key, value] of entries(entry)) {
-}
-
-console.log(entry);
 
 module.exports = {
   entry: entry,
@@ -66,7 +60,17 @@ module.exports = {
       }
     ]
   },
-  plugins: [new VueLoaderPlugin()],
+  plugins: [
+    new VueLoaderPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new WriteFilePlugin(),
+    new CleanWebpackPlugin(['dist/*.*'], {
+      root: __dirname,
+      verbose: true,
+      dry: false
+    })
+  ],
   resolve: {
     alias: {
       vue: "vue/dist/vue.js"

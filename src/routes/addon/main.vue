@@ -1,20 +1,24 @@
 <template>
     <div class="box">
         {{msg}}
+        <span>
+            {{msg1}}
+        </span>
     </div>
 </template>
 <script>
 export default {
     data: function(){
         return {
-            msg: 'this is my project'
+            msg: 'Hello, World!',
+            msg1: 'Are you her100e?'
         }
     }
 }
 </script>
 <style lang="stylus">
 .box
-    width 300px
+    width 200px
     height 200px
     margin-top 10px
     margin-bottom 20px
