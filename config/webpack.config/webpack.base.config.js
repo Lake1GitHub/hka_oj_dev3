@@ -42,11 +42,17 @@ files.forEach(file => {
   }
 });
 
+console.log('-------------------------------------');
+console.log(path.resolve());
+console.log('-------------------------------------');
+
 module.exports = {
   entry: entry,
   output: {
     filename: "[name]",
-    path: path.resolve("dist")
+    path: path.resolve("dist"),
+    hotUpdateChunkFilename: 'hot/hot-update.js',
+    hotUpdateMainFilename: 'hot/hot-update.json'
   },
   module: {
     rules: [
@@ -62,13 +68,10 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new WriteFilePlugin(),
-    new CleanWebpackPlugin(['dist/*.*'], {
-      root: __dirname,
-      verbose: true,
-      dry: false
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(),
+      verbose: true
     })
   ],
   resolve: {

@@ -11,7 +11,7 @@ export default {
     data: function(){
         return {
             msg: 'Hello, World!',
-            msg1: 'Are yodddu her100e?'
+            msg1: 'Aredfdfdfdf you here?'
         }
     }
 }
