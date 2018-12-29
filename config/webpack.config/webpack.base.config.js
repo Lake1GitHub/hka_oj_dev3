@@ -78,5 +78,11 @@ module.exports = {
     alias: {
       vue: "vue/dist/vue.js"
     }
+  },
+  devServer: {
+    host: 'localhost',
+    port: '8080',
+    hot: true,
+    open: true
   }
 };

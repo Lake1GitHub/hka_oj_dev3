@@ -6,7 +6,7 @@
   "scripts": {
     "comment": "aaaaa",
     "build": "better-npm-run build webpack-dev-server --inline --progress --config config/webpack.config/webpack.production.config.js",
-    "start": "better-npm-run start webpack --watch --inline --progress --config config/webpack.config/webpack.development.config.js"
+    "start": "better-npm-run start webpack-dev-server --hot --inline --progress --config config/webpack.config/webpack.development.config.js"
   },
   "betterScripts": {
     "build": {

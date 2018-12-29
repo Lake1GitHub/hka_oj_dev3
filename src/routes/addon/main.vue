@@ -4,6 +4,9 @@
         <span>
             {{msg1}}
         </span>
+        <span>
+            {{msg2}}
+        </span>
     </div>
 </template>
 <script>
@@ -11,7 +14,8 @@ export default {
     data: function(){
         return {
             msg: 'Hello, World!',
-            msg1: 'Aredfdfdfdf you here?'
+            msg1: 'Are you here?',
+            msg2: 'No, I am not here'
         }
     }
 }
