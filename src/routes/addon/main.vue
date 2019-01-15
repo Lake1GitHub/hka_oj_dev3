@@ -15,7 +15,7 @@ export default {
         return {
             msg: 'Hello, World!',
             msg1: 'Are you here?',
-            msg2: 'No, I am not here'
+            msg2: "yes, I'm here"
         }
     }
 }

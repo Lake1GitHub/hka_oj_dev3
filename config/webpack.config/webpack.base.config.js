@@ -1,12 +1,9 @@
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const fs = require("fs");
-const webpack = require("webpack");
 const WriteFilePlugin = require("write-file-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 let entry = {};
-let output = {};
-let { keys, values, entries } = Object;
 
 let files = fs.readdirSync("src/routes");
 files.forEach(file => {
@@ -41,10 +38,6 @@ files.forEach(file => {
     }
   }
 });
-
-console.log('-------------------------------------');
-console.log(path.resolve());
-console.log('-------------------------------------');
 
 module.exports = {
   entry: entry,
@@ -81,7 +74,6 @@ module.exports = {
   },
   devServer: {
     host: 'localhost',
-    port: '8080',
     hot: true,
     open: true
   }

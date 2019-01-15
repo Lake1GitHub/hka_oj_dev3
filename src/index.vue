@@ -1,8 +1,8 @@
 /*
  * @Author: yxcoder 
  * @Date: 2018-12-26 09:29:40 
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-12-29 10:29:27
+ * @Last Modified by: yxcoder
+ * @Last Modified time: 2019-01-15 16:53:08
  */
   <template>
     <div id="content">
@@ -12,7 +12,7 @@
           {{msg2}}
         </span>
       </div>
-      <a href="addon.html" >jump222! jump!</a>
+      <a href="addon.html" >jump! jump!</a>
       </div>
   </template>
   <script>
@@ -27,6 +27,6 @@
   </script>
   <style lang="stylus">
   div
-    color red
+    color green
   </style>
   
